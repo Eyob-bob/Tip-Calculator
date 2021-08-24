@@ -1,0 +1,252 @@
+:root {
+  --clr-strong-cyan: hsl(172, 67%, 45%);
+  --clr-very-dark-cyan: hsl(183, 100%, 15%);
+  --clr-dark-grayish-cyan-1: hsl(186, 14%, 43%);
+  --clr-dark-grayish-cyan-2: hsl(186, 14%, 56%);
+  --clr-light-grayish-cyan-1: hsl(185, 41%, 84%);
+  --clr-light-grayish-cyan-2: hsl(185, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form {
+  font-size: 24px;
+}
+
+label {
+  font-size: 1rem;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--clr-strong-cyan);
+  background-color: var(--clr-light-grayish-cyan-2);
+  text-align: right;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 4px var(--clr-strong-cyan);
+  padding: 5px 1rem;
+  color: var(--clr-very-dark-cyan);
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.all-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-light-grayish-cyan-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--clr-dark-grayish-cyan-1);
+}
+
+main {
+  width: 70%;
+  min-width: 550px;
+  background-color: white;
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.user-entry {
+  width: 48%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount-entry,
+.tip-selection {
+  margin-bottom: 2rem;
+}
+
+.amount-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-light-grayish-cyan-2);
+  position: relative;
+}
+
+label {
+  color: var(--clr-dark-grayish-cyan-1);
+  font-size: 0.7rem;
+}
+
+.amount-input img {
+  position: absolute;
+  left: 1rem;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem 1rem;
+}
+
+.tip-selection button {
+  font-size: inherit;
+  font-weight: bold;
+  color: white;
+  background-color: var(--clr-very-dark-cyan);
+  border: none;
+  height: 3rem;
+  border-radius: 5px;
+}
+
+.tip-selection button:hover {
+  cursor: pointer;
+}
+
+.tip-selection input {
+  padding: 3px;
+}
+
+.people-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--clr-dark-grayish-cyan-1);
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+
+.people-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.people-input img {
+  position: absolute;
+  padding-left: 1rem;
+}
+
+/* ************** output ***************/
+.output {
+  width: 48%;
+  height: 100%;
+  background-color: var(--clr-very-dark-cyan);
+  border-radius: 0.7rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tip-amount,
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.output h3 {
+  color: white;
+  font-size: 1rem;
+}
+
+.output h1 {
+  color: var(--clr-strong-cyan);
+  font-size: 2rem;
+}
+
+.output p {
+  color: var(--clr-light-grayish-cyan-1);
+}
+
+.output button {
+  text-transform: uppercase;
+  width: 100%;
+  background-color: var(--clr-strong-cyan);
+  color: var(--clr-very-dark-cyan);
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
+.output button:hover {
+  background-color: rgb(150, 238, 238);
+  cursor: pointer;
+}
+
+/* ************** media queries ************ */
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90%;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .output {
+    height: 40%;
+    width: 90%;
+  }
+
+  .user-entry {
+    height: 40%;
+    width: 90%;
+  }
+}
+
+/* ************** JavaScript classes ************ */
+
+.show-error {
+  display: flex;
+}
+
+.btn-active {
+  background-color: rgb(152, 221, 221);
+  color: var(--clr-very-dark-cyan);
+}
